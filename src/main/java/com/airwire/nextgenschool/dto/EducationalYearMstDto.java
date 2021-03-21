@@ -1,20 +1,15 @@
-package com.airwire.nextgenschool.model;
+package com.airwire.nextgenschool.dto;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "educational_year_mst")
-public class EducationalYearMst {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class EducationalYearMstDto {
+
 	private Long id;
 	private String description;
 	private boolean currentYear;
 	private boolean active;
-
-	@ManyToOne
-	@JoinColumn(name="school_id")
-	private School school;
+	private Long schoolId;
 
 	public Long getId() {
 		return id;
@@ -48,11 +43,11 @@ public class EducationalYearMst {
 		this.active = active;
 	}
 
-	public School getSchool() {
-		return school;
+	public Long getSchoolId() {
+		return schoolId;
 	}
 
-	public void setSchool(School school) {
-		this.school = school;
+	public void setSchoolId(Long schoolId) {
+		this.schoolId = schoolId;
 	}
 }
