@@ -20,7 +20,18 @@ public class HolidayMst {
 	private Date date;
 	private String description;
 	private String type;
-	
+	@ManyToOne
+	@JoinColumn(name="school_id")
+	private School school;
+
+	public School getSchool() {
+		return school;
+	}
+
+	public void setSchool(School school) {
+		this.school = school;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="educational_year_mst_id")
 	private EducationalYearMst educationalYearMst;

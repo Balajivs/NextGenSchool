@@ -16,13 +16,25 @@ public class YearwiseStudent {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name="class_division_mst_id")
-	private ClassDivisionMst classDivisionMst;
+	@JoinColumn(name="yearwise_class_division_id")
+	private YearwiseClassDivision yearwiseClassDivision;
 	
 	@ManyToOne
 	@JoinColumn(name="pravesh_nirgam_id")
 	private PraveshNirgam praveshNirgam;
-	
+
+	@ManyToOne
+	@JoinColumn(name="school_id")
+	private School school;
+
+	public School getSchool() {
+		return school;
+	}
+
+	public void setSchool(School school) {
+		this.school = school;
+	}
+
 	private Integer rollNo;
 	private Boolean active;
 	public Long getId() {
@@ -31,12 +43,15 @@ public class YearwiseStudent {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public ClassDivisionMst getClassDivisionMst() {
-		return classDivisionMst;
+
+	public YearwiseClassDivision getYearwiseClassDivision() {
+		return yearwiseClassDivision;
 	}
-	public void setClassDivisionMst(ClassDivisionMst classDivisionMst) {
-		this.classDivisionMst = classDivisionMst;
+
+	public void setYearwiseClassDivision(YearwiseClassDivision yearwiseClassDivision) {
+		this.yearwiseClassDivision = yearwiseClassDivision;
 	}
+
 	public PraveshNirgam getPraveshNirgam() {
 		return praveshNirgam;
 	}

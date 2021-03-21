@@ -29,8 +29,7 @@ public class User {
     private String mobileNo;
     private String username;
     private String password;
-    @Transient
-    private String groupName;
+
     
     @ManyToMany
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -105,20 +104,5 @@ public class User {
 		this.roles = roles;
 	}
 
-//	public Branch getBranch() {
-//		return branch;
-//	}
-//
-//	public void setBranch(Branch branch) {
-//		this.branch = branch;
-//	}
-
-	public String getGroupName() {
-		return groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
     
 }

@@ -13,7 +13,8 @@ public class EducationalYearMst {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String description;
-	private Boolean active;
+	private boolean currentYear;
+	private boolean active;
 	
 	
 	public Long getId() {
@@ -28,11 +29,18 @@ public class EducationalYearMst {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Boolean getActive() {
+	public boolean getActive() {
 		return active;
 	}
-	public void setActive(Boolean active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
+
+	public boolean isCurrentYear() {
+		return currentYear;
+	}
+
+	public void setCurrentYear(boolean currentYear) {
+		this.currentYear = currentYear;
+	}
 }

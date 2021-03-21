@@ -2,11 +2,7 @@ package com.airwire.nextgenschool.model;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "teacher_mst")
@@ -34,11 +30,35 @@ public class TeacherMst {
 	private String gender;
 	private String qualification;
 	private Date joiningDate;
-	private String mobileNo;
 	private String remarks;
 	private Boolean active;
-	
-	
+
+	@ManyToOne
+	@JoinColumn(name="school_id")
+	private School school;
+
+	@OneToOne
+	@JoinColumn(name="user_id")
+	private User user;
+
+
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public School getSchool() {
+		return school;
+	}
+
+	public void setSchool(School school) {
+		this.school = school;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -164,12 +184,6 @@ public class TeacherMst {
 	}
 	public void setJoiningDate(Date joiningDate) {
 		this.joiningDate = joiningDate;
-	}
-	public String getMobileNo() {
-		return mobileNo;
-	}
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
 	}
 	public String getRemarks() {
 		return remarks;

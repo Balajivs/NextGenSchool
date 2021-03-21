@@ -14,7 +14,7 @@ public class ClassDivisionMst {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String description;
+	private String title;
 	private Boolean active;
 	
 	@ManyToOne
@@ -28,12 +28,15 @@ public class ClassDivisionMst {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDescription() {
-		return description;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
+
 	public Boolean getActive() {
 		return active;
 	}

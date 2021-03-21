@@ -16,6 +16,8 @@ public class MiscellaneousMst {
 	private String code;
 	private String description;
 	private Boolean active;
+
+
 	
 	
 	public Long getId() {
