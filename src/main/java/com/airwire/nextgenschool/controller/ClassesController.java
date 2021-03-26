@@ -15,12 +15,14 @@ public class ClassesController {
 	@Autowired
 	ClassesService classesService;
 
+	
 	@RequestMapping(value = "createClasses", method = RequestMethod.POST)
 	public void create(@RequestBody ClassesMstDto classesMstDto) throws Exception {
 		classesService.create(classesMstDto);
 	}
 	
 	//edit
+	
 	
 	//delete
 	
