@@ -1,50 +1,54 @@
 package com.airwire.nextgenschool.dto;
 
-public class EducationalYearMstDto {
+import java.util.Date;
+
+public class HolidayMstDto {
 
 	private Long id;
+	private Date date;
 	private String description;
-	private boolean currentYear;
-	private boolean active;
+	private String type;
 	private Long schoolId;
-
+	private Boolean active;
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public boolean isCurrentYear() {
-		return currentYear;
+	public String getType() {
+		return type;
 	}
-
-	public void setCurrentYear(boolean currentYear) {
-		this.currentYear = currentYear;
+	public void setType(String type) {
+		this.type = type;
 	}
-
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
 	public Long getSchoolId() {
 		return schoolId;
 	}
-
 	public void setSchoolId(Long schoolId) {
 		this.schoolId = schoolId;
 	}
+	public Boolean getActive() {
+		return active;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+	
+	
+	
+	
 }
