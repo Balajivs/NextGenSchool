@@ -6,6 +6,7 @@ public class ClassesMstDto {
 	private String title;
 	private Boolean active;
 	private Long schoolId;
+	private String school;
 	
 	public Long getId() {
 		return id;
@@ -30,6 +31,12 @@ public class ClassesMstDto {
 	}
 	public void setSchoolId(Long schoolId) {
 		this.schoolId = schoolId;
+	}
+	public String getSchool() {
+		return school;
+	}
+	public void setSchool(String school) {
+		this.school = school;
 	}
 
 }

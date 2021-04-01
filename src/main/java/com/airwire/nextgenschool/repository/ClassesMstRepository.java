@@ -6,4 +6,5 @@ import com.airwire.nextgenschool.model.ClassMst;
 
 public interface ClassesMstRepository  extends JpaRepository<ClassMst, Long> {
 
+	
 }
