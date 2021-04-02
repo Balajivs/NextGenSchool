@@ -1,8 +1,5 @@
 package com.airwire.nextgenschool.dto;
 
-import javax.persistence.*;
-
-
 public class EducationalYearMstDto {
 
 	private Long id;

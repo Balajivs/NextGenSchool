@@ -13,4 +13,5 @@ public class NextgenschoolApplication {
 		SpringApplication.run(NextgenschoolApplication.class, args);
 	}
 
+	
 }
