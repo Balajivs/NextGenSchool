@@ -1,5 +1,8 @@
 package com.airwire.nextgenschool.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,24 +40,68 @@ public class ClassesServiceImpl implements ClassesService {
 		}
 	}
 
+	@Override
+	public List<ClassesMstDto> getClassesBySchoolId(Long schoolId) throws Exception {
 
+		List<ClassMst> list = classesMstRepository.getClassesBySchoolId(schoolId, true);
+		List<ClassesMstDto> classesMstDtoList = new ArrayList<ClassesMstDto>();
+		if (list != null && list.size() > 0) {
+			list.stream().forEach(classMst -> {
+				classesMstDtoList.add(classesMstMapper(classMst));
+			});
+		} else {
+			throw new Exception("Specified School doesnt have any class configured");
+		}
+
+		return classesMstDtoList;
+	}
+	
 	@Override 
-	public void getClassesBySchoolId(Long id){
-		classesMstRepository.findById(id);
+	public void updateClasses(ClassesMstDto classesMstDto) throws Exception { 
+		if (classesMstDto != null) {
+//			Long schoolId = classesMstDto.getSchoolId();
+//			School school = schoolRepository.getSchoolById(schoolId);
+			if (classesMstDto.getId() >= 0) {
+		ClassMst existingClasses =  classesMstRepository.getClassesMstById(classesMstDto.getId(),true);
+		existingClasses.setTitle(classesMstDto.getTitle());
+		existingClasses.setActive(classesMstDto.getActive());
+		classesMstRepository.save(existingClasses); 
+			} else {
+				throw new Exception("Record has not updated");
+			}
+		}
 	}
 
-	@Override 
-	public void updateClasses(ClassMst classMst) { 
-		ClassMst existingClasses = classesMstRepository.findById(classMst.getId()).orElse(null);
-		ClassMst newClasses = existingClasses;
-		newClasses.setTitle(classMst.getTitle());
-		newClasses.setActive(true);
-		newClasses = classesMstRepository.save(newClasses); 
-	}
+	@Override
+	public void activeDeactiveClasses(ClassesMstDto classesMstDto) throws Exception {
+		if (classesMstDto != null) {
+//			Long schoolId = classesMstDto.getSchoolId();
+//			School school = schoolRepository.getSchoolById(schoolId);
+			if (classesMstDto.getId() >= 0) {
+				ClassMst classMst = classesMstRepository.getClassesMstById(classesMstDto.getId(),true);
+				classMst.setActive(classesMstDto.getActive());
+				classesMstRepository.save(classMst);
+			} else {
+				throw new Exception("Record has not updated");
+			}
 
-	@Override 
-	public String deleteClasses(Long id){
-		classesMstRepository.deleteById(id);
-		return "Class removed!!"+id; 
+		}
+
+	}
+	
+	/*
+	 * @Override public String deleteClasses(Long id){
+	 * classesMstRepository.deleteById(id); return "Class removed!!"+id; }
+	 */
+	
+	public ClassesMstDto classesMstMapper(ClassMst classMst) {
+		ClassesMstDto classesMstDto = new ClassesMstDto();
+		classesMstDto.setId(classMst.getId());
+		classesMstDto.setActive(classMst.getActive());
+		classesMstDto.setTitle(classMst.getTitle());
+		if (classMst.getSchool() != null) {
+			classesMstDto.setSchoolId(classMst.getSchool().getId());
+		}
+		return classesMstDto;
 	}
 }
