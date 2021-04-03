@@ -15,10 +15,8 @@ public interface ClassesMstRepository  extends JpaRepository<ClassMst, Long> {
 	
 	@Query("SELECT c FROM ClassMst c WHERE c.school.id=:id AND c.active=:active")
 	List<ClassMst> getClassesBySchoolId(@Param("id") Long id,@Param("active") boolean active);
-	
-	/*
-	 * @Query("SELECT c FROM ClassMst c WHERE c.id=:id") ClassMst
-	 * getClassesById(@Param("id") Long id);
-	 */
-	
+
+	@Query("SELECT c FROM ClassMst c WHERE c.id=:id")
+	ClassMst getClassesById(@Param("id") Long classId);
+
 }
