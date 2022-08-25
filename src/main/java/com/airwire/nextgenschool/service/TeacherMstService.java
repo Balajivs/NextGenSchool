@@ -1,5 +1,8 @@
 package com.airwire.nextgenschool.service;
 
+import java.util.List;
+
+import com.airwire.nextgenschool.dto.EducationalYearMstDto;
 import com.airwire.nextgenschool.dto.TeacherMstDto;
 
 /**
@@ -32,5 +35,9 @@ public interface TeacherMstService {
   	 * @throws Exception the exception
   	 */
   	void updateTeacherMstService(TeacherMstDto teacherMstDto) throws Exception;
+  	
+  	public void activeDeactiveTeacherMst(TeacherMstDto teacherMstDto) throws Exception;
+  	
+  	public List<TeacherMstDto> getAllTeacherMstBySchoolId(Long schoolId) throws Exception;
 
 }
