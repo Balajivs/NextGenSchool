@@ -1,1 +1,1 @@
-# NextGenSchool
+# nextgenschool
