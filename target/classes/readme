@@ -1,0 +1,19 @@
+STEP 1 : import project and paste the sql
+
+STEP 2 : Run sql script in mysql db
+
+STEP 3 : Check application.properties file
+
+STEP 4 : Run the main NextgenschoolApplication file
+
+STEP 5 : After ran tomacat check on browser localhost:2023/swagger.html
+
+STEP 6: In http://localhost:2023/swagger-ui.html#/auth-rest-ap-is/authenticateUserUsingPOST
+        use below details for generate the token
+
+{
+  "password": "balaji12345",
+  "username": "balajivs"
+}
+
+STEP 7 : After generation of token, you can check the payload
