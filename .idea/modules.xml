@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/NextGenSchool-main.iml" filepath="$PROJECT_DIR$/.idea/NextGenSchool-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/NextGenSchool-main/nextgenschool.iml" filepath="$PROJECT_DIR$/NextGenSchool-main/nextgenschool.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/NextGenSchool.iml" filepath="$PROJECT_DIR$/.idea/NextGenSchool.iml" />
+>>>>>>> 321a539 (first commit on 09122023)
     </modules>
   </component>
 </project>

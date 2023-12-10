@@ -12,6 +12,8 @@
     <bytecodeTargetLevel>
       <module name="NextGen" target="11" />
       <module name="nextgenschool" target="1.8" />
+      <module name="nextgenschool (1)" target="1.8" />
+      <module name="nextgenschool (2)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
